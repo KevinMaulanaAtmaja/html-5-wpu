@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG</title>
+    <style>
+        body{
+            min-height: 1000px;
+        }
+        svg{
+            display: block;
+            margin: 20px;
+            background-color: rgb(214, 211, 211);
+        }
+        .svg{
+            background-color: #ddd;
+            width: 300px;
+            height: 300px;
+        }
+        .rect{
+            width: 100px;
+            height: 100px;
+            fill: saddlebrown;
+            x: 100px;
+            y: 120px;
+        }
+
+        .bintang{
+            background-color: transparent;
+            animation: putar 5s linear infinite;
+        }
+
+        @keyframes putar {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg class="svg" viewBox="50 50 300 300">
+        <rect class="rect"/>
+    </svg>
+
+    <!-- multi shapes di svg -->
+    <svg width="150" height="150">
+        <rect width="100" height="100" fill="lightblue" />
+        <circle r="50" cx="50" cy="50" fill="salmon" />
+        <rect width="70" height="70" x="15" y="15" fill="cyan"/>
+    </svg>
+
+    <!-- path  -->
+    <svg>
+        <path fill="none" stroke="black"
+        d=" 
+            M 60,10 
+            L 110,90 
+            H 10 
+            L 60,10
+        " />
+
+        <path fill="none" stroke="black" 
+        d="
+            m 170,10
+            l 50,80
+            h -100
+            l  50,-80
+        "
+        />
+    </svg>
+
+    <svg>
+        <path fill="none" stroke="red"
+        d="
+            M 10,90
+            C 30,90
+            25,10 50,10
+            S 70,90 90,90
+        "
+        />
+    </svg>
+
+    <!-- svg dari figma -->
+    <svg width="240" height="203" viewBox="0 0 240 203" fill="none" xmlns="http://www.w3.org/2000/svg" class="bintang">
+        <g filter="url(#filter0_d_1_2)">
+        <path d="M120 0L147.166 74.2807H235.078L163.956 120.189L191.122 194.469L120 148.561L48.878 194.469L76.0442 120.189L4.92216 74.2807H92.8338L120 0Z" fill="#004AB9"/>
+        <path d="M120 1.45572L146.697 74.4524L146.817 74.7807H147.166H233.381L163.685 119.769L163.349 119.985L163.486 120.36L190.14 193.24L120.271 148.141L120 147.966L119.729 148.141L49.8598 193.24L76.5138 120.36L76.651 119.985L76.3153 119.769L6.61875 74.7807H92.8338H93.1833L93.3034 74.4524L120 1.45572Z" stroke="black"/>
+        </g>
+        <defs>
+        <filter id="filter0_d_1_2" x="0.922165" y="0" width="238.156" height="202.469" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+        <feOffset dy="4"/>
+        <feGaussianBlur stdDeviation="2"/>
+        <feComposite in2="hardAlpha" operator="out"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2" result="shape"/>
+        </filter>
+        </defs>
+        </svg>
+
+        <!-- contoh lain dari svg figma -->
+        <svg width="238" height="200" viewBox="0 0 238 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="bintang">
+            <path d="M119.47 2.82826L119 1.54428L118.53 2.82826L91.4843 76.7807H3.92216H2.22558L3.65101 77.7008L74.4374 123.392L47.4084 197.298L46.8962 198.698L48.1491 197.889L119 152.156L189.851 197.889L191.104 198.698L190.592 197.298L163.563 123.392L234.349 77.7008L235.774 76.7807H234.078H146.516L119.47 2.82826Z" fill="#004AB9" stroke="black"/>
+        </svg>
+            
+        <!-- svg dari file svg  -->
+        <img src="img/adobeillustrator.svg" alt="gambar-svg" width="40%">
+
+
+        <!-- svg dari xml  -->
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="40%" fill="blue" stroke="none" >
+            <title>Adobe Illustrator</title>
+            <path d="M10.53 10.73c-.1-.31-.19-.61-.29-.92-.1-.31-.19-.6-.27-.89-.08-.28-.15-.54-.22-.78h-.02c-.09.43-.2.86-.34 1.29-.15.48-.3.98-.46 1.48-.14.51-.29.98-.44 1.4h2.54c-.06-.211-.14-.46-.23-.721-.09-.269-.18-.559-.27-.859zM19.75.3H4.25C1.9.3 0 2.2 0 4.55v14.9c0 2.35 1.9 4.25 4.25 4.25h15.5c2.35 0 4.25-1.9 4.25-4.25V4.55C24 2.2 22.1.3 19.75.3zM14.7 16.83h-2.091c-.069.01-.139-.04-.159-.11l-.82-2.38H7.91l-.76 2.35c-.02.09-.1.15-.19.141H5.08c-.11 0-.14-.061-.11-.18L8.19 7.38c.03-.1.06-.21.1-.33.04-.21.06-.43.06-.65-.01-.05.03-.1.08-.11h2.59c.08 0 .12.03.13.08l3.65 10.3c.03.109 0 .16-.1.16zm3.4-.15c0 .11-.039.16-.129.16H16.01c-.1 0-.15-.061-.15-.16v-7.7c0-.1.041-.14.131-.14h1.98c.09 0 .129.05.129.14v7.7zm-.209-9.03c-.231.24-.571.37-.911.35-.33.01-.65-.12-.891-.35-.23-.25-.35-.58-.34-.92-.01-.34.12-.66.359-.89.242-.23.562-.35.892-.35.391 0 .689.12.91.35.22.24.34.56.33.89.01.34-.11.67-.349.92z"/>
+        </svg>
+        </body>
+</html>

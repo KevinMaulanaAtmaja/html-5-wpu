@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        input{
+            display: block;
+            margin-bottom: 10px;
+        }
+        .display{
+            display: inline;
+        }
+
+        input:invalid{
+            border: none;
+            outline: 2px solid red;
+        }
+        input:valid{
+            border: 1px solid black;
+            outline: inherit;
+            border-radius: inherit;
+        }
+        /* input:required{
+            border: 1px solid black;
+            outline: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <div>
+            <label for="input-text">Text</label>
+            <input type="text" name="text" id="input-text">
+        </div>
+        <div>
+            <label for="input-password">password</label>
+            <input type="password" name="password" id="input-password" >
+        </div>
+        <div>
+            <label for="input-tel">tel</label>
+            <input type="tel" name="tel" id="input-tel">
+        </div>
+        <div>
+            <label for="input-email">email</label>
+            <input type="email" name="email" id="input-email">
+        </div>
+        <div>
+            <label for="input-url">url web</label>
+            <input type="url" name="url" id="input-url" >
+        </div>
+        <div>
+            <label for="input-number">number</label>
+            <input type="number" name="number" id="input-number">
+        </div>
+        <div>
+            <label for="input-range">range</label>
+            <input type="range" name="range" id="input-range">
+        </div>
+        <div>
+            <label for="input-datetime">datetime</label>
+            <input type="datetime-local" name="datetime" id="input-datetime">
+        </div>
+        <div>t
+            <label for="input-color">color</label>
+            <input type="color" name="color" id="input-color">
+        </div>
+        <div>
+            <label for="input-search">search</label>
+            <input type="search" name="search" id="input-search">
+        </div>
+    
+    <button type="submit">Kirim!</button>
+
+    <h1>HTML Input Attribute</h1>
+
+    <div>
+        <label for="input-html-attribute1"> Attribute autocomplete</label>
+        <input type="text" name="html-attribute1" id="input-html-attribute1" autocomplete="off">
+    </div>
+
+    <div>
+        <label for="input-html-attribute2"> Attribute autofocus</label>
+        <input type="text" name="html-attribute2" id="input-html-attribute2" autofocus>
+    </div>
+    <div>
+        <label for="input-html-attribute3"> Attribute required</label>
+        <input type="text" name="html-attribute3" id="input-html-attribute3"  required>
+    </div>
+    
+    <div>
+        <label for="input-html-attribute4"> Attribute min-maxLength</label>
+        <input type="text" name="html-attribute4" id="input-html-attribute4" minlength="2" maxlength="10">
+    </div>
+    
+
+    <div>
+        <label for="input-html-attribute5">Attribute min & max - step</label>
+        <input type="number" name="html-attribute5" id="input-html-attribute5" min="-5" max="150" step="5">
+    </div>
+
+    <div>
+        <label for="input-no-hp">Pattern</label>
+        <input type="tel" name="no-hp" id="input-no-hp" pattern="(\+62|62|0)8[1-9][0-9]{6,9}$" >
+    </div>
+
+    <div>
+        <label for="input-slider">slider</label>
+        <span class="awal"></span>
+        <input type="range" name="slider" id="input-slider" class="display" min="0" max="100" step="5">
+        <span class="akhir"></span>
+    </div>
+
+    <div>
+        <label for="input-slider2">slider 2</label>
+        <input type="color" name="slider2" id="input-slider2" class="display">
+        <span class="hexa"></span>
+    </div>
+
+
+    <button type="submit">Kirim!</button>
+    </form>
+
+    <script>
+        const slider = document.querySelector('#input-slider');
+        const awal = document.querySelector('.awal');
+        const akhir = document.querySelector('.akhir');
+
+        awal.innerHTML = slider.min;
+        akhir.innerHTML = slider.value;
+
+        // pake eventListener 'change' jika browser tdk support
+        slider.addEventListener('input', function() {
+            akhir.innerHTML = slider.value;
+        });
+
+
+        const warna = document.querySelector('#input-slider2')
+        const hexa = document.querySelector('.hexa')
+
+        hexa.innerHTML = hexa.value;
+        warna.addEventListener('input', function() {
+            hexa.innerHTML = warna.value;
+            hexa.style.color = warna.value;
+        });
+    </script>
+</body>
+</html>

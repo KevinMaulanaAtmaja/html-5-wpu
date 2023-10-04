@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Images Elements</title>
+  </head>
+  <body>
+    <!-- src alt & width -->
+    <img src="img/ig.png" alt="ig-logo" width="400" />
+    <!-- title  -->
+    <img src="img/yt.png"  title="yt-logo" />
+    <!-- srcset  -->
+    <img srcset="img/tt-sm.jpg 500w, img/tt-md.jpg 750w, img/tt-lg.jpg 1000w" >
+    <!-- sizes -->
+    <img src="img/wa.png" sizes="(min-width:  1200px) 100vw" >
+
+
+    <!-- loading --> <!-- eager & lazy -->
+    <h1 style="margin-bottom: 700px;">Loading</h1>
+    <img src="img/pinterest.png" loading="lazy">
+
+    <!-- figure  -->
+    <figure>
+      <img src="img/github.png">
+      <figcaption>Gambar Gi thub</figcaption>
+    </figure>
+
+    <!-- picture  -->
+    <!-- lebih rekomend srcset & sizes dipakai di tag picture -->
+    <picture>
+      <source media="(min-width: 860px)" srcset="img/tt-lg.jpg" sizes="50vw">
+      <source media="(min-width: 600px)" srcset="img/tt-md.jpg">
+      <img src="img/tt-sm.jpg" alt="gambar-tt">
+    </picture>
+
+
+    <!-- audio  -->
+    <!-- tag audio sederhana -->
+    <audio src="audio/Ngiong.mp3" controls loop muted autoplay preload="auto"></audio>
+    <!-- tag audio kompleks -->
+    <figure>
+      <figcaption>Dengarkan Sound ini!</figcaption>
+      <audio controls>
+        <source src="audio/Ngiong.ogg" type="audio/ogg">
+        <source src="audio/Ngiong.mp3" type="audio/mpeg">
+        Browser tidak mendukung tag <code>audio</code>
+      </audio>
+    </figure>
+
+
+    <!-- video  -->
+    <!-- tag video sederhana -->
+    <video src="video/You Serious.mp4" controls width="400" poster="img/preload-penjelasan.png" preload="none" autoplay loop muted></video>
+
+    <!-- tag video kompleks -->
+    <figure>
+      <figcaption>
+        Video Are you serius?
+      </figcaption>
+      <video controls width="400" poster="img/preload-penjelasan.png">
+        <source src="video/You Serious.webm" type="video/mp4">
+        <source src="video/You Serious.mp4" type="video/webm">
+        Browser tidak mendukung tag <code>video</code>
+      </video>
+    </figure>
+
+    <!-- tag track di video -->
+    <video controls width="400">
+      <source src="video/vid1.mp4" type="video/mp4">
+      <track src="captions/caption1.vtt" kind="captions" label="Bahasa Indonesia" srclang="id" default/>
+      <track src="captions/caption2.vtt" kind="captions" label="English" srclang="en"/>
+      <track src="captions/subtitle.vtt" kind="subtitles" label="Germany" srclang="de"/>
+    </video>
+
+    <!-- embeded video -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/vpduJ20Kj4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </body>
+</html>

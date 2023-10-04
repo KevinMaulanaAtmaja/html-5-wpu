@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Storage</title>
+    <style>
+        a{
+            color: inherit;
+        }
+        .dark-mode{
+            background-color: #222;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>User 1</h1>
+
+    <a href="" onclick="gantiNama()">Ganti nama</a>
+    <a href="" onclick="hapusNama()">Hapus nama</a>
+    <a href="" class="toggle"> Dark Mode</a>
+    <a href="" onclick="hapusStorage()"> Hapus Storage</a>
+
+    <script>
+        const judul = document.querySelector('h1');
+        let name = localStorage.getItem('nama');
+        // let nama1 = sessionStorage.getItem('nama');
+        if (!name) {
+            name = prompt('masukkan user anda:  ');
+            localStorage.setItem('nama', name) 
+        }
+
+        judul.innerHTML = `Halo, ${name}`;
+
+        //ganti nama
+        const gantiNama = (e) => {
+            name = prompt('masukkan nama baru anda: ')
+            localStorage.setItem('nama', name);
+            e.preventDefault();
+        }
+        //hapus nama
+        const hapusNama = (e) => {
+            localStorage.removeItem('nama');
+            e.preventDefault();
+        }
+
+        // toggle mode
+        const toggle = document.querySelector('.toggle');
+        let tema = localStorage.getItem('tema');
+
+        if(!tema){
+            localStorage.setItem('tema', 'light');
+        }
+
+        const darkMode = () => {
+            document.body.classList.add('dark-mode');
+            toggle.innerHTML = 'Light Mode';
+            localStorage.setItem('tema', 'dark');
+        }
+        const lightMode = () => {
+            document.body.classList.remove('dark-mode');
+            toggle.innerHTML = 'Dark Mode';
+            localStorage.setItem('tema', 'light');
+        }
+
+        if(tema === 'dark'){
+            darkMode();
+        }
+
+        toggle.addEventListener('click', function(e){
+            tema = localStorage.getItem('tema');
+            if(tema === 'light'){
+                darkMode();
+            }else{
+                lightMode();
+            }
+            e.preventDefault();
+        })
+
+        //hapus storage
+        const hapusStorage = (e) => {
+            localStorage.clear();
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>
